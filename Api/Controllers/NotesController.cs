@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,7 +6,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Api.Model.Entities.Note;
-
 
 namespace Api.Controllers
 {
@@ -17,13 +15,13 @@ namespace Api.Controllers
     {
         private readonly NoteContext _context;
 
-
         public NotesController(NoteContext context)
         {
             _context = context;
         }
 
         // GET: api/Notes
+        //pagination
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Note>>> GetNotes()
         {
